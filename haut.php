@@ -14,7 +14,7 @@
   <tr>
     <td valign="middle" background="images/imgset2__26.png"><IMG SRC="images/imgset2__22.png" WIDTH=8 HEIGHT=6 ALT=""></td>
     <td bgcolor="#EDEDED"> <div align="center"><font size="1" face="Arial, Helvetica, sans-serif">
-        <a href="http://lolopotu.pingouin.ca/webfolio/">Accueil</a> -
+        <a href="/">Accueil</a> -
         <?php if($_GET['page']=="projet") { ?>
         Le projet
         <?php } else { ?>
