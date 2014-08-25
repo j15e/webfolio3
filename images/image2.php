@@ -1,14 +1,15 @@
 <?php
 // Set the static variables (discussed in step 3)
-$font_file = "/home/ftpusers/lolopotu/web/webfolio/fonts/arial.ttf";
+$font_file = "../fonts/arial.ttf";
 $font_size = 13;
 $hauteur = 20;
 $angle = 0;
 $y_start = 16;
-$text2 = stripslashes($text);
+$text2 = stripslashes($_GET['text']);
 $double_text = $text2;
 
 // Create image and allocate colors (discussed in step 1)
+$max_width = $_GET['max_width'];
 $im = imagecreate($max_width, $hauteur);
 $matte = imagecolorallocate($im, 153, 153, 153);
 $background = imagecolorallocate($im, 255, 255, 255);
@@ -18,7 +19,7 @@ $shadow = imagecolorallocate($im, 137, 137, 137);
 $text_color = imagecolorallocate($im, 0, 0, 0);
 
 // Draw the button (discussed in step 1)
-imagefilledrectangle($im, 3, 1, $max_width-2, $hauteur-2, $background); 
+imagefilledrectangle($im, 3, 1, $max_width-2, $hauteur-2, $background);
 /*imageline($im, 0, 14, $max_width-1, 14, $outline);
 imageline($im, 0, 12, $max_width-1, 12, $hilite);
 imageline($im, 0, 13, $max_width-1, 13, $shadow); */

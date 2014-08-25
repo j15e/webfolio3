@@ -1,5 +1,5 @@
 <?php
-	if(!isset($page))
-        $page="projet";
-	include (("includes/").$page.(".inc.php"))
+	if(!isset($_GET['page']))
+        $_GET['page']="projet";
+	include (("includes/").$_GET['page'].(".inc.php"))
 ?>

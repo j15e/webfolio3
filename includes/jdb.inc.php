@@ -1,7 +1,7 @@
 <div align="left">
   <?php include("haut.php"); ?>
   <?php include("jdb/config.php"); ?>
-<? // connexion
+<?php // connexion
 @mysql_connect($host,$user,$pass)
    or die("Impossible de se connecter");
 @mysql_select_db("$bdd")
@@ -42,14 +42,14 @@ $prefixt = '(http|https|ftp|telnet|news|gopher|file|wais)://';
 $pureUrlt = '([[:alnum:]/\n+-=%&:_.~?]+[#[:alnum:]+]*)';
 $textet = eregi_replace($prefixt.$pureUrlt,
             '<a href="\\1://\\2" target="_blank">\\1://\\2</a>', $textet); ?>
-              <font size="2"><strong><? echo $val["titre_fr"]; ?></strong> par
-              <? if ($checkup5["email"] != "") echo "<a href=mailto:".$checkup5['email']." >"; ?>
-              <? echo $val["auteur"]; ?>
-              <? if ($checkup5["email"] != "") echo"</a>"; ?>
-              le <? echo $val["date"]; ?></font><br>
-              <font size="2"><? echo $textet; ?></font></font></td>
+              <font size="2"><strong><?php echo $val["titre_fr"]; ?></strong> par
+              <?php if ($checkup5["email"] != "") echo "<a href=mailto:".$checkup5['email']." >"; ?>
+              <?php echo $val["auteur"]; ?>
+              <?php if ($checkup5["email"] != "") echo"</a>"; ?>
+              le <?php echo $val["date"]; ?></font><br>
+              <font size="2"><?php echo $textet; ?></font></font></td>
           </tr>
-          <? }; ?>
+          <?php }; ?>
         </table>
       </td>
       <td background="images/imgset2__16.png"><IMG SRC="images/imgset2__24.png" WIDTH=6 HEIGHT=6 ALT=""></td>
