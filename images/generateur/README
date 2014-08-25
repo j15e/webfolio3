@@ -1,0 +1,94 @@
+--------------------------------------------------------------------------------
+phpWatermark 0.3 (c) 2002 Mario Witte <mario.witte@chengfu.net>
+--------------------------------------------------------------------------------
+Description
+
+phpWatermark aims to provide a simple way of marking an image with a 
+digital "watermark" to prevent unauthorized use.
+
+--------------------------------------------------------------------------------
+Usage
+
+phpWatermark is implemented as a PHP class.
+Thus you first need to instantiate it with the source
+image as the only parameter:
+$wm = new watermark("/path/to/images/image.png");
+
+Next you may specify where the watermark should be put
+on the source image by calling setPosition.
+Valid parameters for setPosition are:
+
+TL - Top left
+TM - Top middle
+TR - Top right
+CL - Center left
+C  - Center
+CR - Center right
+BL - Bottom left
+BM - Bottom middle
+BR - Botton right
+
+Or:
+
++--+--+--+
+|TL|TM|TR|
++--+--+--+
+|CL|C |CR|
++--+--+--+
+|BL|BM|BR|
++--+--+--+
+
+As a gimmick you may specify "RND" which will choose a
+position by random - SCNR ;-)
+
+Optionally your max specify a fixed color or the text. If
+you don't specify one phpWatermark will try to determine
+the best color
+$wm->setFixedColor('#E4E4E4'); // Set color using hex-code
+$wm->setFixedColor(array(255, 255, 255)); // Set color by rgb
+
+Next you should call "addWatermark" and give the
+watermark text as a parameter:
+$wm->addWatermark("phpWatermark");
+
+Finally you can fetch a reference to the newly created image
+by calling getMarkedImage:
+$im = $wm->getMarkedImage();
+
+A simple example file with comments is included in this
+package: example_usage_text.php
+
+--------------------------------------------------------------------------------
+
+Features & TODO
+
+Current features include:
+ - Accepts either resources or filenames
+ - Automatic choosing of best color for watermark text
+ - Configurable position of watermark on image
+
+TODO:
+ - TTF support
+ - Support for watermark images (e.g. company logos)
+ - Better checking of required functions
+ - No more "die" instructions
+ - Configurable overlay intensity
+ ... to be continued ...
+
+--------------------------------------------------------------------------------
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+*
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+*
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+
+--------------------------------------------------------------------------------
