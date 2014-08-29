@@ -1,7 +1,7 @@
 <?php 
 $host = "localhost";
 $user = "lolopotu";
-$pass = "ayoyeosti4";
+$pass = "CHANGETHIS";
 $bdd = "lolopotu";
 $table_z = "webfoliojdb";
 $class = "id";
